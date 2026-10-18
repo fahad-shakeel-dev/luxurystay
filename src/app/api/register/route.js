@@ -14,7 +14,7 @@ export async function POST(req) {
             phone,
             email,
             password: hashedPassword,
-            image
+            image: image ? (Array.isArray(image) ? image : [image]) : []
         });
 
         return NextResponse.json(

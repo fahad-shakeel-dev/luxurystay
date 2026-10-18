@@ -304,7 +304,7 @@ const RegisterForm = () => {
     setLoading(true);
     setError("");
 
-    if (!name || !phone || !email || !password || !confirmPassword || !image) {
+    if (!name || !phone || !email || !password || !confirmPassword) {
       setError("All fields are required.");
       setLoading(false);
       return;
@@ -411,6 +411,7 @@ const RegisterForm = () => {
                 )}
               </LocalImageUpload>
             </div>
+            <p className="mt-2 text-xs text-gray-300">Profile photo is optional</p>
           </div>
 
           <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-3 sm:grid-cols-2">
