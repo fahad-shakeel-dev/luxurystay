@@ -1,0 +1,142 @@
+/* .form-field {
+  width: 100%;
+  padding: 14px 45px 14px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.form-field:focus {
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.3);
+}
+
+.input-icon {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+.icon-btn {
+  position: absolute;
+  top: 13px;
+  right: 12px;
+  color: #fbbf24;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.error-box {
+  background: #fef2f2;
+  color: #b91c1c;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 12px;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+} */
+
+
+
+.form-field {
+  width: 100%;
+  min-width: 0;
+  padding: 12px 44px 12px 16px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  outline: none;
+  font-size: 16px;
+  transition: all 0.4s ease;
+}
+
+.form-field:focus {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.4);
+}
+
+.form-field-underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #f59e0b, #d97706);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.group:hover .form-field-underline,
+.form-field:focus + .form-field-underline {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.input-icon {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  font-size: 20px;
+  pointer-events: none;
+}
+
+.icon-btn {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  color: #f59e0b;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.icon-btn:hover {
+  color: #d97706;
+}
+
+@keyframes gradient-text {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-text {
+  background: linear-gradient(45deg, #f59e0b, #d97706, #f59e0b);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-text 4s ease infinite;
+}

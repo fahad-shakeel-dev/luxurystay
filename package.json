@@ -1,0 +1,34 @@
+{
+  "name": "hms",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "images:migrate": "node scripts/migrate-images.mjs",
+    "test:images": "node --test scripts/image-storage.test.mjs",
+    "seed:rooms": "node scripts/seed-rooms.mjs",
+    "test:rooms": "node --test scripts/rooms.test.mjs",
+    "test:sessions": "node --test scripts/sessions.test.mjs",
+    "test:bookings": "node --test scripts/bookings.test.mjs"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "framer-motion": "^12.23.3",
+    "lucide-react": "^0.525.0",
+    "mongoose": "^8.16.3",
+    "next": "15.3.5",
+    "next-auth": "^4.24.11",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.5.0",
+    "sharp": "0.34.3",
+    "sweetalert2": "^11.22.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "tailwindcss": "^4"
+  }
+}
