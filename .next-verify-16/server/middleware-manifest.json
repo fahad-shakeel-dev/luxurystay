@@ -4,12 +4,12 @@
     "/": {
       "files": [
         "server/edge/chunks/node_modules_next_dist_esm_build_templates_edge-wrapper_1laxnp4wxenz1.js",
-        "server/edge/chunks/[root-of-the-server]__1ivfvvlrzzj9p._.js",
-        "server/edge/chunks/turbopack-node_modules_next_dist_esm_build_templates_edge-wrapper_1zbr91zz0h-tr.js"
+        "server/edge/chunks/[root-of-the-server]__1w3ze3pr3x567._.js",
+        "server/edge/chunks/turbopack-node_modules_next_dist_esm_build_templates_edge-wrapper_06d2qz5vmyu60.js"
       ],
       "name": "middleware",
       "page": "/",
-      "entrypoint": "server/edge/chunks/turbopack-node_modules_next_dist_esm_build_templates_edge-wrapper_1zbr91zz0h-tr.js",
+      "entrypoint": "server/edge/chunks/turbopack-node_modules_next_dist_esm_build_templates_edge-wrapper_06d2qz5vmyu60.js",
       "matchers": [
         {
           "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/userDashboard(?:\\/((?:[^\\/#\\?]+?)(?:\\/(?:[^\\/#\\?]+?))*))?(\\.json|\\.rsc|\\.segments\\/.+\\.segment\\.rsc)?[\\/#\\?]?$",
@@ -27,7 +27,7 @@
       "wasm": [],
       "assets": [],
       "env": {
-        "__NEXT_BUILD_ID": "rs7oMWObS-gQ9Mz9icYFX",
+        "__NEXT_BUILD_ID": "CE89_MvPWm8jl22OtBRRV",
         "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "TjZ35Sc/3aHRlAERse6mqIabsUIatO8tMibEKxt9QN8=",
         "__NEXT_PREVIEW_MODE_ID": "ce5324095d50f8fba30035bbc06012cd",
         "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "80af102ae6b56d42abd4c94f7c1c3379551608d279196effe902c925f7aee9b7",
