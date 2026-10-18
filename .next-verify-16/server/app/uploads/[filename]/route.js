@@ -1,7 +1,10 @@
 var R=require("../../../chunks/[turbopack]_runtime.js")("server/app/uploads/[filename]/route.js")
-R.c("server/chunks/[root-of-the-server]__01958z-13hxyg._.js")
-R.c("server/chunks/[root-of-the-server]__15bjnu5yieigz._.js")
+R.c("server/chunks/node_modules_@vercel_oidc_dist_1dzcesi3f08ok._.js")
 R.c("server/chunks/_0bvo4z5kgrwl4._.js")
+R.c("server/chunks/[externals]__1nygp6f4ue9ht._.js")
+R.c("server/chunks/_0g766caqdc1oq._.js")
+R.c("server/chunks/[root-of-the-server]__15bjnu5yieigz._.js")
+R.c("server/chunks/node_modules_07bmz4cmf_cye._.js")
 R.c("server/chunks/_next-internal_server_app_uploads_[filename]_route_actions_1bni83lb4nvxw.js")
 R.m(26270)
 module.exports=R.m(26270).exports

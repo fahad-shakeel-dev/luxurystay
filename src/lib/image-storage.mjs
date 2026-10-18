@@ -2,6 +2,7 @@ import { mkdir, writeFile } from "node:fs/promises"
 import path from "node:path"
 import { randomUUID } from "node:crypto"
 import sharp from "sharp"
+import { put } from "@vercel/blob"
 
 export const MAX_IMAGE_BYTES = 5 * 1024 * 1024
 export const MAX_IMAGE_COUNT = 8
@@ -32,6 +33,20 @@ export async function prepareImage(file) {
 }
 
 export async function saveImages(images) {
+  if (process.env.VERCEL && !process.env.BLOB_READ_WRITE_TOKEN) {
+    throw new Error("Connect a Vercel Blob store before uploading images.")
+  }
+  if (process.env.BLOB_READ_WRITE_TOKEN) {
+    return Promise.all(images.map(async image => {
+      const { url } = await put(`uploads/${randomUUID()}.webp`, image, {
+        access: "public",
+        addRandomSuffix: false,
+        contentType: "image/webp",
+        cacheControlMaxAge: 31536000,
+      })
+      return url
+    }))
+  }
   await mkdir(uploadDirectory, { recursive: true })
   return Promise.all(images.map(async (image) => {
     const filename = `${randomUUID()}.webp`

@@ -18,14 +18,14 @@
   },
   {
     "route": "/userDashboard",
-    "firstLoadUncompressedJsBytes": 730468,
+    "firstLoadUncompressedJsBytes": 730568,
     "firstLoadChunkPaths": [
       ".next-verify-16\\static\\chunks\\0umf92h1sb77c.js",
       ".next-verify-16\\static\\chunks\\0g4l94ajb8wvw.js",
       ".next-verify-16\\static\\chunks\\1p6u22n4c0x3n.js",
       ".next-verify-16\\static\\chunks\\13ufvea61g9bb.js",
       ".next-verify-16\\static\\chunks\\2ej0doftps99f.js",
-      ".next-verify-16\\static\\chunks\\2od2d6r-boqt-.js",
+      ".next-verify-16\\static\\chunks\\354jhoqhg4gzb.js",
       ".next-verify-16\\static\\chunks\\1x6obpmlu1_c2.js",
       ".next-verify-16\\static\\chunks\\1qij71_zlmfo_.js",
       ".next-verify-16\\static\\chunks\\0z-93v_71ujyh.js",

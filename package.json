@@ -15,6 +15,7 @@
     "test:bookings": "node --test scripts/bookings.test.mjs"
   },
   "dependencies": {
+    "@vercel/blob": "^2.8.2",
     "bcryptjs": "^3.0.2",
     "framer-motion": "^12.23.3",
     "lucide-react": "^0.525.0",

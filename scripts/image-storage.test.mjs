@@ -10,7 +10,9 @@ const require = createRequire(import.meta.url)
 
 async function loadRoute(file) {
   const filename = path.resolve(file)
-  const { code } = await require("next/dist/build/swc").transform(await readFile(filename, "utf8"), {
+  const swc = require("next/dist/build/swc")
+  await swc.loadBindings()
+  const { code } = await swc.transform(await readFile(filename, "utf8"), {
     filename, jsc: { parser: { syntax: "ecmascript" } }, module: { type: "commonjs" },
   })
   const route = new Module(filename)
@@ -27,6 +29,21 @@ test("image validation rejects invalid, oversized, and disguised SVG files", asy
   await assert.rejects(storage.prepareImage(new Blob(["<svg/>"], { type: "image/svg+xml" })))
   await assert.rejects(storage.prepareImage(new Blob(['<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"/>'], { type: "image/png" })))
   await assert.rejects(storage.prepareImage({ type: "image/png", size: storage.MAX_IMAGE_BYTES + 1, arrayBuffer() { throw new Error("Should not read oversized data") } }), /5 MB/)
+})
+
+test("Vercel uploads require a connected Blob store", async () => {
+  const originalVercel = process.env.VERCEL
+  const originalToken = process.env.BLOB_READ_WRITE_TOKEN
+  process.env.VERCEL = "1"
+  delete process.env.BLOB_READ_WRITE_TOKEN
+  try {
+    await assert.rejects(storage.saveImages([Buffer.from("image")]), /Connect a Vercel Blob store/)
+  } finally {
+    if (originalVercel === undefined) delete process.env.VERCEL
+    else process.env.VERCEL = originalVercel
+    if (originalToken === undefined) delete process.env.BLOB_READ_WRITE_TOKEN
+    else process.env.BLOB_READ_WRITE_TOKEN = originalToken
+  }
 })
 
 test("upload and serving routes save real images locally and prevent unsafe requests", async () => {

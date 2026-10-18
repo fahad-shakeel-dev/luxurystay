@@ -42,7 +42,7 @@ export const authOptions = {
                         id: user._id.toString(),
                         name: user.name,
                         email: user.email,
-                        image: user.image
+                        image: Array.isArray(user.image) ? user.image[0] : user.image,
                     };
                 } catch (error) {
                     console.log("Error: ", error);
@@ -71,9 +71,12 @@ export const authOptions = {
                     await connectDb();
                     const dbUser = await User.findOne({ email: token.email });
                     const savedImage = Array.isArray(dbUser?.image) ? dbUser.image[0] : dbUser?.image;
+                    const imageSource = process.env.VERCEL && savedImage?.startsWith("/uploads/")
+                        ? token.picture
+                        : savedImage || token.picture;
                     let imageSaved = false;
                     try {
-                        token.picture = await localizeImage(savedImage || token.picture);
+                        token.picture = await localizeImage(imageSource);
                         imageSaved = true;
                     } catch {
                         token.picture = "/placeholder.svg";

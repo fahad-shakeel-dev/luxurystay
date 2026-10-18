@@ -28,7 +28,11 @@ export async function POST(request) {
   try {
     const urls = await saveImages(images)
     return NextResponse.json({ urls }, { status: 201 })
-  } catch {
-    return NextResponse.json({ message: "Images could not be saved. Please try again." }, { status: 500 })
+  } catch (error) {
+    console.error("Image upload storage failed:", error instanceof Error ? error.message : "Unknown storage error")
+    const message = process.env.VERCEL && !process.env.BLOB_READ_WRITE_TOKEN
+      ? "Image storage is not configured for this deployment. Please try again later."
+      : "Images could not be saved. Please try again."
+    return NextResponse.json({ message }, { status: 500 })
   }
 }

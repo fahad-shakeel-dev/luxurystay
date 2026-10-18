@@ -1140,8 +1140,9 @@ export default function UserDashboard() {
                   <p className="text-xs text-gray-700">{session?.user?.email || "N/A"}</p>
                 </div>
                 <img
-                  src={session?.user?.image || "/placeholder.svg"}
+                  src={(Array.isArray(session?.user?.image) ? session.user.image[0] : session?.user?.image) || "/placeholder.svg"}
                   alt="Profile"
+                  onError={(event) => { event.currentTarget.src = "/placeholder.svg" }}
                   className="w-8 h-8 rounded-full object-cover border-2 border-gray-200"
                 />
                 <ChevronDown className="w-4 h-4 text-gray-700" />
