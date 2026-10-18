@@ -1,0 +1,3 @@
+module.exports=[66235,a=>{"use strict";var b=a.i(7997);a.s(["default",0,function(){return(0,b.jsxs)("div",{className:"login-session-wait",role:"status","aria-live":"polite",children:[(0,b.jsx)("span",{className:"login-spinner","aria-hidden":"true"}),(0,b.jsx)("p",{children:"Loading sign-in. Please wait..."})]})}])},29210,function(a){a.n(a.i(66235))}];
+
+//# sourceMappingURL=src_app_auth_loading_jsx_0qqn4mr0c4_qj._.js.map

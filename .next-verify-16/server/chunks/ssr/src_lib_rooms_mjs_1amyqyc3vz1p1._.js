@@ -1,0 +1,3 @@
+module.exports=[94772,a=>{"use strict";a.s(["H",0,function(a){return a.name||("Suite"===a.roomType||"Presidential"===a.roomType?`${a.roomType} Suite`:`${a.roomType||"Guest"} Room`)},"b",0,function(a){return`PKR ${new Intl.NumberFormat("en-PK",{maximumFractionDigits:0}).format(Number(a)||0)}`},"U",0,function(a,b="All",c="recommended"){return a.filter(a=>a.isAvailable&&("All"===b||a.roomType===b)).sort((a,b)=>"price-low"===c?a.price-b.price:"price-high"===c?b.price-a.price:String(a.roomNumber).localeCompare(String(b.roomNumber),void 0,{numeric:!0}))}])}];
+
+//# sourceMappingURL=src_lib_rooms_mjs_1amyqyc3vz1p1._.js.map
